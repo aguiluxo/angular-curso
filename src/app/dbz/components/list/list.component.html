@@ -7,18 +7,19 @@
         let isLast =  last;
         let isEven = even;
       "
-      class="list-group-item" [ngClass] = "{
+      class="list-group-item d-flex justify-content-between align-items-center" [ngClass] = "{
         'list-group-item-dark': isLast,
         'list-group-item-primary': isEven
       }">
+        <div>
+          <span class="text-primary">{{ i  + 1}} - </span>
 
-        <span class="text-primary">{{ i  + 1}} - </span>
+          <span>{{character.name}} - </span>
 
-        <span>{{character.name}} - </span>
+          <strong>Nivel de poder: </strong>
 
-        <strong>Nivel de poder: </strong>
-
-        <span>{{character.power}}</span>
-
+          <span>{{character.power}}</span>
+        </div>
+        <button class="btn btn-danger" (click)="onDeleteCharacter(character.id)">X</button>
       </li>
     </ul>
